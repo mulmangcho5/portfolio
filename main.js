@@ -1,6 +1,6 @@
 "use strick";
 
-// Make navbar transparent when it is on the top
+// 스크롤 시 내브바 고정 및 백그라운드 색 입히기
 const navbar = document.querySelector("#navbar");
 const navbarHeight = navbar.getBoundingClientRect().height;
 document.addEventListener("scroll", () => {
@@ -11,7 +11,7 @@ document.addEventListener("scroll", () => {
   }
 });
 
-// Handle scrolling when tapping on the navbar menu
+// 내브바 누르면 그 화면으로 이동
 const navbarMenu = document.querySelector(".navbar__menu");
 navbarMenu.addEventListener("click", (event) => {
   const target = event.target;
@@ -23,10 +23,17 @@ navbarMenu.addEventListener("click", (event) => {
   scrollIntoView(link);
 });
 
-// Handle scrolling when tapping on the home__contact button
+// 컨택미 버튼 누르면 컨택화면으로 이동
 const homeContactBtn = document.querySelector(".home__contact");
 homeContactBtn.addEventListener("click", () => {
   scrollIntoView("#contact");
+});
+
+// 밑으로 스크롤 시 홈  섹션 투명해지기
+const home = document.querySelector(".home__container");
+const homeHeight = home.getBoundingClientRect().height;
+document.addEventListener("scroll", () => {
+  home.style.opacity = 1 - window.scrollY / homeHeight;
 });
 
 function scrollIntoView(selector) {

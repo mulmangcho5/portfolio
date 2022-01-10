@@ -88,9 +88,18 @@ p {
   justify-content: space-between;
   align-items: center;
   color: var(--color-white);
-  background-color: var(--color-pink);
   padding: 16px;
+  background-color: transparent;
+  position: fixed;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
 }
+
+#navbar.navbar--dark {
+  background-color: var(--color-pink);
+  padding: 8px;
+}
+
 .navbar__logo {
   font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
@@ -125,6 +134,7 @@ p {
 #home {
   background: url(images/homebackground.png) center/cover no-repeat;
   padding: 40px;
+  padding-top: 120px;
   text-align: center;
 }
 .home__avatar {

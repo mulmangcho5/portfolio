@@ -20,7 +20,14 @@ navbarMenu.addEventListener("click", (event) => {
     return;
   }
 
+  navbarMenu.classList.remove("open");
   scrollIntoView(link);
+});
+
+//내브바 햄버거 버튼(모바일)
+const navbarToggleBtn = document.querySelector(".navbar__toggleButton");
+navbarToggleBtn.addEventListener("click", () => {
+  navbarMenu.classList.toggle("open");
 });
 
 // 컨택미 버튼 누르면 컨택화면으로 이동
